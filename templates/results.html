@@ -5,11 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collected results</title>
+    <style>
+        html, body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        nav {
+            height: 5rem;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 1rem; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav ul li {
+            display: inline; 
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: #111;
+        }
+
+        .results {
+            width: 60%;
+            margin: 1rem auto;
+            min-height: 30vh;
+        }
+
+        .results table {
+            width: 100%;
+        }
+
+        .results table thead {
+            background: #eee;;
+        }
+
+        .results table thead tr {
+            height: 3rem;
+            text-align: left;
+
+        }
+        .results table tbody tr {
+            height: 2.5rem;
+            text-align: left;
+        }
+
+        .image {
+            width: 60%;
+            margin: 1rem auto;
+            min-height: 40vh;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+     
+    </style>
 </head>
 <body>
-    <nav class="nav">
-        <h1>Data Collector</h1>
-    </nav>
+<nav class="nav">
+    <h2>Data collector</h2>
+
+    <ul>
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/results">Results</a>
+        </li>
+    </ul>
+</nav>
     <div class="results">
         <table>
             <thead>
@@ -36,6 +111,9 @@
                 {% endif %}
             </tbody>
         </table>
+    </div>
+    <div class="image">
+        <img src="{{url_for('static', filename='edge.jpg')}}" >
     </div>
 </body>
 </html>

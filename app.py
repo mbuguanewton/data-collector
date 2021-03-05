@@ -46,8 +46,6 @@ def collect():
 @app.route("/results")
 def results():
     users = User.query.order_by(User.created).all()
-
-    print(users)
     return render_template("results.html", users=users)
 
 

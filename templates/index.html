@@ -5,25 +5,109 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collector</title>
+
+    <style>
+       html, body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        nav {
+            height: 5rem;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 1rem; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav ul li {
+            display: inline; 
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: #111;
+        }
+
+        .collector {
+            width: 60%;
+            margin: 1rem auto;
+            height: auto;
+            padding: 10px;
+        }
+
+        .formgroup {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+        .formgroup label {
+            margin: 5px 0;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .formgroup input, select {
+            height: 2.5rem;
+            padding: 0 10px;
+            width: 95%;
+            border-radius: 5px;
+            background: #eee;
+            border: none;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        form .btn {
+            height: 3rem;
+            width:100%;
+            margin: 1rem 0;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+            background: teal;
+            font-size: 1rem;
+        }
+    </style>
 </head>
 <body>
     <nav class="nav">
         <h2>Data collector</h2>
+
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/results">Results</a>
+            </li>
+        </ul>
     </nav>
 
     <div class="collector">
         <form action="{{url_for('collect')}}" method="POST" enctype="multipart/form-data">
             <div class="formgroup">
                 <label for="name">Name</label>
-                <input type="text" name='name' class='formgroup__input'>
+                <input type="text" name='name' class='formgroup__input' placeholder='name'>
             </div>
             <div class="formgroup">
                 <label for="email">Email</label>
-                <input type="text" name='email' class='formgroup__input'>
+                <input type="text" name='email' class='formgroup__input' placeholder='email'>
             </div>
             <div class="formgroup">
                 <label for="age">Age</label>
-                <input type="number" name='age' class='formgroup__input'>
+                <input type="number" name='age' class='formgroup__input' placeholder='age'>
             </div>
             <div class="formgroup">
                 <label for="age">Gender</label>
@@ -41,10 +125,12 @@
             </div>
             <div class="formgroup">
                 <label for="marks">Marks</label>
-                <input type="number" name='marks' class='formgroup__input'>
+                <input type="number" name='marks' class='formgroup__input' placeholder='marks'>
             </div>
 
-            <input type="submit" class="btn" value='submit'>
+            <div class="formgroup">
+                <input type="submit" class="btn" value='submit'>
+            </div>
         </form>
     </div>
 </body>
