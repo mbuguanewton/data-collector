@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collector</title>
+</head>
+<body>
+    <nav class="nav">
+        <h2>Data collector</h2>
+    </nav>
+
+    <div class="collector">
+        <form action="{{url_for('collect')}}" method="POST" enctype="multipart/form-data">
+            <div class="formgroup">
+                <label for="name">Name</label>
+                <input type="text" name='name' class='formgroup__input'>
+            </div>
+            <div class="formgroup">
+                <label for="email">Email</label>
+                <input type="text" name='email' class='formgroup__input'>
+            </div>
+            <div class="formgroup">
+                <label for="age">Age</label>
+                <input type="number" name='age' class='formgroup__input'>
+            </div>
+            <div class="formgroup">
+                <label for="age">Gender</label>
+                <select name='gender' class='formgroup__input'>
+                    <option value="female">
+                        Female
+                    </option>
+                    <option value="male">
+                        Male
+                    </option>
+                    <option value="prefer not to say">
+                        Prefer not to say
+                    </option>
+                </select>
+            </div>
+            <div class="formgroup">
+                <label for="marks">Marks</label>
+                <input type="number" name='marks' class='formgroup__input'>
+            </div>
+
+            <input type="submit" class="btn" value='submit'>
+        </form>
+    </div>
+</body>
+</html>
